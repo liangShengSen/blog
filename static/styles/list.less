@@ -1,0 +1,152 @@
+.pin-list {
+    background: #f4f5f5;
+    & > .item {
+        margin-bottom: 8px;
+        .pin {
+            background-color: #fff;
+            border-radius: .2rem;
+            .pin-content-row, .pin-image-row {
+                position: relative;
+                margin: 1rem 4rem 0 6.45rem;
+            }
+            .pin-header-row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 16px 2rem 0 20px;
+                .user-link {
+                    font-size: 0;
+                }
+                .account-group {
+                    display: flex;
+                    align-items: center;
+                    .user-popover-box {
+                        display: inline;
+                        .avatar {
+                            display: inline-block;
+                            position: relative;
+                            background-position: 50%;
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            background-color: #eee;
+                            flex: 0 0 auto;
+                            width: 3.75rem;
+                            height: 3.75rem;
+                            border-radius: 50%;
+                        }
+                    }
+                    .pin-header-content {
+                        margin-left: 1rem;
+                        .meta-box {
+                            display: flex;
+                            align-items: center;
+                            margin: .3rem 0 0;
+                            font-size: 13px;
+                            color: #8a9aa9;
+                            cursor: default;
+                            .position {
+                                max-width: 24rem;
+                            }
+                            .dot {
+                                margin: 0 .5em;
+                            }
+                            .time-box {
+                                color: #8a9aa9;
+                            }
+                        }
+                    }
+                }
+                .header-action {
+                    display: flex;
+                    .follow-button {
+                        margin: 0 0 0 auto;
+                        padding: 0;
+                        width: 55px;
+                        height: 26px;
+                        font-size: 13px;
+                        border-color: #6cbd45;
+                        color: #6cbd45;
+                        border: 1px solid #37c700;
+                        background-color: #fff;
+                    }
+                }
+            }
+            .pin-content-row {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                .content-box {
+                    font-size: 15px;
+                    line-height: 1.6;
+                    white-space: pre-wrap;
+                    color: #17181a;
+                    overflow: hidden;
+                }
+            }
+            .pin-image-row {
+                margin-top: .333rem;
+                .image-box {
+                    display: flex;
+                    flex-wrap: wrap;
+                    max-width: 100%;
+                    .image {
+                        flex: 0 1 auto;
+                        position: relative;
+                        margin-top: 4px;
+                        max-width: 100%;
+                        background-position: 50%;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        cursor: zoom-in;
+                        .ratio-holder {
+                            pointer-events: none;
+                        }
+                    }
+                }
+            }
+            .pin-action-row {
+                .action-box {
+                    display: flex;
+                    position: relative;
+                    margin-top: 1.333rem;
+                    height: 34px;
+                    border-top: 1px solid #ebebeb;
+                    .action {
+                        flex: 1 1 33.333%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        height: 100%;
+                        cursor: pointer;
+                        user-select: none;
+                        &:not(:last-child):after {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            right: 0;
+                            margin-top: -1rem;
+                            width: 1px;
+                            height: 2rem;
+                            background-color: #ebebeb;
+                        }
+                        .action-title-box {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            .icon {
+                                width: 18px;
+                                height: 18px;
+                            }
+                            .action-title {
+                                margin-left: .3em;
+                                font-size: 13px;
+                                font-weight: 500;
+                                color: #8a93a0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

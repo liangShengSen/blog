@@ -1,0 +1,66 @@
+.dock {
+    width: 112px;
+    margin-right: 15px;
+    @media (max-width: 980px){
+        display: none;
+    }
+    .dock-nav {
+        max-width: 9.33rem;
+        border-radius: .2rem;
+        background-color: #fff;
+        position: fixed;
+        top: 6.67rem;
+        width: 9.33rem;
+        transition: all .2s linear;
+        &.top {
+            top: .67rem;
+        }
+        .nav-list {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 1.33rem 1rem;
+            .nav-item {
+                position: relative;
+                cursor: pointer;
+                height: 2.58rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.16rem;
+                color: #2e3135;
+                padding: 0 1rem;
+                border-radius: .25rem;
+                transition: background-color .2s,color .2s;
+                &:not(:first-child) {
+                    margin-top: .83rem;
+                }
+                &.active {
+                    background-color: @link-active;
+                    & > a {
+                        color: #fff;
+                    }
+                }
+                &:not(.active):hover {
+                    background-color: hsla(0,0%,94.9%,.6);
+                }
+                &:nth-child(3):before {
+                    position: absolute;
+                    bottom: -.5rem;
+                    content: "";
+                    width: 7.33rem;
+                    height: 1px;
+                    background: rgba(92,96,102,.1);
+                }
+                & > a:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,156 @@
+.sidebar {
+    .sidebar-wrapper {
+        position: fixed;
+        top: 6.67rem;
+        width: 248px;
+        flex: 1;
+        max-width: 248px;
+        &.top {
+           top: .67rem;
+        }
+        @media (max-width: 980px) {
+            display: none;
+        }
+        .profile-box {
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            border-radius: .2rem;
+            margin-bottom: 8px;
+            font-size: 13px;
+            .profile {
+                display: flex;
+                padding: 16px;
+                height: 5rem;
+                max-height: 92px;
+                border-bottom: 1px solid rgba(92,96,102,.1);
+                box-sizing: content-box;
+                .avatar {
+                    flex: 0 0 auto;
+                    margin-right: 1rem;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    border: 1px solid #fff;
+                    box-shadow: 0 2px 6px 0 rgba(0,0,0,.15);
+                }
+                .user-info {
+                    position: relative;
+                    margin: 1rem 0;
+                    min-width: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .username {
+                        color: #17181a;
+                        font-size: 15px;
+                        font-weight: 600;
+                        line-height: 1.2;
+                    }
+                    .position {
+                        color: #8f969c;
+                    }
+                }
+            }
+            .stat-list {
+                flex: 1 1 auto;
+                display: flex;
+                margin: 0;
+                list-style: none;
+                text-align: center;
+                padding: 16.5px 0;
+                & > .item {
+                    flex: 1 1 33.333%;
+                    max-height: 2.833rem;
+                    line-height: 1;
+                    .title {
+                        font-size: 13px;
+                        color: #8a9aa9;
+                        margin-bottom: .5rem;
+                    }
+                    .count {
+                        font-size: 15px;
+                        font-weight: 600;
+                        color: #2e3135;
+                    }
+                    &:not(:last-child) {
+                        border-right: 1px solid rgba(92,96,102,.1);
+                    }
+                }
+            }
+        }
+        .pin-block {
+            margin-bottom: .67rem;
+            background-color: #fff;
+            header {
+                color: #2e3135;
+                font-weight: 600;
+                font-size: 1.25rem;
+                line-height: 1.07;
+                padding: 13px 16px;
+                border-bottom: 1px solid hsla(0,0%,59.2%,.1);
+            }
+            .pin-list {
+                padding: 0 16px;
+                background-color: #fff;
+                .item {
+                    padding: 12px 0;
+                    &:not(:last-child) {
+                        border-bottom: 1px solid hsla(0,0%,59.2%,.1);
+                    }
+                    .pin {
+                        display: flex;
+                        justify-content: space-between;
+                        .content-box {
+                            display: flex;
+                            align-content: space-between;
+                            flex-direction: column;
+                            .content {
+                                color: #2e3135;
+                                font-size: 1.15rem;
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                -webkit-line-clamp: 2;
+                                max-height: 3.5rem;
+                                max-width: 22rem;
+                                max-height: 3em;
+                                &.with-picture {
+                                    max-width: 11rem;
+                                }
+                            }
+                            .stat {
+                                color: #76797e;
+                                font-size: 1.02rem;
+                                margin-top: 0.83rem;
+                            }
+                        }
+                        .image-box {
+                            min-width: 5.67rem;
+                            height: 5.67rem;
+                            margin-left: 1rem;
+                            border-radius: 4px;
+                            background-position: 50%;
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                        }
+                    }
+                }
+            }
+        }
+        .guide-link {
+            display: flex;
+            align-items: center;
+            padding: 1.33rem;
+            background-color: #fff;
+            color: #2e3135;
+            font-size: 1.17rem;
+            margin-bottom: .67rem;
+            border-radius: 2px;
+            .icon {
+                margin-right: .83rem;
+            }
+        }
+    }
+}
