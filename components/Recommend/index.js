@@ -1,40 +1,11 @@
 import '../../static/styles/recommend.less'
 import Link from 'next/link'
+import React, { useContext } from 'react'
+import { StoreContext } from '../../redux'
 
-const Recommend = props => (
-    <aside className="sidebar">
-        <div className="sidebar-wrapper top">
-            <div className="profile-box shadow">
-                <div className="profile">
-                    <Link href="/">
-                        <a target="_blank">
-                            <div className="lazy avatar avatar loaded"></div>
-                        </a>
-                    </Link>
-                    <div className="user-info">
-                        <Link href="/">
-                            <a target="_blank" className="username ellipsis">
-                                Sam君
-                            </a>
-                        </Link>
-                        <div className="position ellipsis"></div>
-                    </div>
-                </div>
-                <ul className="stat-list">
-                    <li target="_blank" className="item">
-                        <div className="title">沸点</div>
-                        <div className="count">0</div>
-                    </li>
-                    <li className="item">
-                        <div className="title">关注</div>
-                        <div className="count">17</div>
-                    </li>
-                    <li className="item">
-                        <div className="title">关注者</div>
-                        <div className="count">0</div>
-                    </li>
-                </ul>
-            </div>
+const InnerBlock = () => {
+    return (
+        <>
             <div className="related-pin-block pin-block">
                 <header>推荐沸点</header>
                 <ul className="pin-list">
@@ -49,7 +20,7 @@ const Recommend = props => (
                                         <span>28 评论</span>
                                     </div>
                                 </div>
-                                <div className="image-box" style={{'backgroundImage':'url("/static/images/logo.a7995ad.svg")'}}></div>
+                                <div className="image-box" style={{ 'backgroundImage': 'url("/static/images/logo.a7995ad.svg")' }}></div>
                             </a>
                         </Link>
                     </li>
@@ -87,8 +58,57 @@ const Recommend = props => (
                     <span className="title">如何玩转沸点</span>
                 </a>
             </Link>
-        </div>
-    </aside>
-)
+        </>
+    )
+}
+
+const Recommend = () => {
+    const { login, visiable } = useContext(StoreContext)
+    return (
+        <aside className={visiable ? "sidebar" : "sidebar sticky"}>
+            <div className="sidebar-wrapper">
+                {
+                    login ?
+                        <div className="profile-box shadow">
+                            <div className="profile">
+                                <Link href="/">
+                                    <a target="_blank">
+                                        <div className="lazy avatar avatar loaded"></div>
+                                    </a>
+                                </Link>
+                                <div className="user-info">
+                                    <Link href="/">
+                                        <a target="_blank" className="username ellipsis">
+                                            Sam君
+                                </a>
+                                    </Link>
+                                    <div className="position ellipsis"></div>
+                                </div>
+                            </div>
+                            <ul className="stat-list">
+                                <li target="_blank" className="item">
+                                    <div className="title">沸点</div>
+                                    <div className="count">0</div>
+                                </li>
+                                <li className="item">
+                                    <div className="title">关注</div>
+                                    <div className="count">17</div>
+                                </li>
+                                <li className="item">
+                                    <div className="title">关注者</div>
+                                    <div className="count">0</div>
+                                </li>
+                            </ul>
+                        </div>
+                        : ''
+                }
+                <InnerBlock />
+                <div className="sticky-section">
+                    <InnerBlock />
+                </div>
+            </div>
+        </aside>
+    )
+}
 
 export default Recommend

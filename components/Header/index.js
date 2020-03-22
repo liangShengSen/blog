@@ -1,23 +1,29 @@
-import { useState, useEffect, useCallback } from 'react'
-import ActiveLink from '../ActiveLink'
-import Link from 'next/link'
 import '../../static/styles/header.less'
+import Link from 'next/link'
+import ActiveLink from '../ActiveLink'
+import React, { useState, useEffect, useCallback, useContext } from 'react'
+import { StoreContext } from '../../redux'
+import { UPDATE_VISIABLE, SHOW_AUTH_MODAL } from '../../redux/action_type'
 
 const Header = () => {
-    const [isLogin, setLogin] = useState(true)
-    const [show, setShow] = useState(false)
+    const { login, visiable, dispatch } = useContext(StoreContext)
     const [focus, setFocus] = useState(false)
-    const [showMenus, setSshowMenus] = useState(false)
-    const [visiable, setVisiable] = useState(true)
+    const [show, setShow] = useState(false)
     const toggleNavs = () => {
         show ? setShow(false) : setShow(true)
     }
+    const [showMenus, setSshowMenus] = useState(false)
     const toggleMenus = () => {
         showMenus ? setSshowMenus(false) : setSshowMenus(true)
     }
+
     const handleScroll = useCallback(() => {
         const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
-        scrollTop > 400 ? setVisiable(false) : setVisiable(true)
+        const action = {
+            type: UPDATE_VISIABLE,
+            visiable: scrollTop > 450 ? false : true
+        }
+        dispatch(action)
     })
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
@@ -65,7 +71,7 @@ const Header = () => {
                                 </form>
                             </li>
                             {
-                                isLogin ?
+                                login ?
                                     <>
                                         <li className="nav-item add">
                                             <div className="add-group">
@@ -117,7 +123,7 @@ const Header = () => {
                                             <span>写文章</span>
                                         </li>
                                         <li className="nav-item auth">
-                                            <span className="login">登录</span>
+                                            <span className="login" onClick={() => {dispatch({type:SHOW_AUTH_MODAL,authModal:true})}}>登录</span>
                                             <span className="register">注册</span>
                                         </li>
                                     </>

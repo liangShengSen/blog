@@ -1,0 +1,3 @@
+export const UPDATE_LOGIN = 'UPDATE_LOGIN'
+export const UPDATE_VISIABLE = 'UPDATE_VISIABLE'
+export const SHOW_AUTH_MODAL = 'SHOW_AUTH_MODAL'

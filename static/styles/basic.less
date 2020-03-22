@@ -32,7 +32,7 @@ ul,li {
 .button, button {
     -webkit-appearance: none;
     appearance: none;
-    background-color: #007fff;
+    background-color: @link-active;
     color: #fff;
     border-radius: 2px;
     border: none;
@@ -47,6 +47,14 @@ input::placeholder {
     color: #aeb6c0;
     font-size: 13px;
     line-height: 1
+}
+input:focus {
+    border-color: @link-active !important;
+}
+input:-internal-autofill-selected {
+    background-color: rgb(232, 240, 254) !important;
+    background-image: none !important;
+    color: -internal-light-dark-color(black, white) !important;
 }
 .shadow {
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
