@@ -10,8 +10,8 @@ const reducer = (state, action) => {
             state.visiable = action.visiable
             return {...state}
         case SHOW_AUTH_MODAL:
-            state.authModal = action.authModal
-            console.log(state);
+            state.authModal.show = action.authModal.show
+            state.authModal.toggle = action.authModal.toggle
             return {...state}
         default:
             return {...state}
@@ -24,7 +24,10 @@ export const Store = props => {
     const defalutStatesValue = {
         login:false,
         visiable:true,
-        authModal:false
+        authModal:{
+            show:false,
+            toggle:null
+        }
     }
     const [{login,visiable,authModal}, dispatch] = useReducer(reducer, defalutStatesValue)
     return (

@@ -123,8 +123,8 @@ const Header = () => {
                                             <span>写文章</span>
                                         </li>
                                         <li className="nav-item auth">
-                                            <span className="login" onClick={() => {dispatch({type:SHOW_AUTH_MODAL,authModal:true})}}>登录</span>
-                                            <span className="register">注册</span>
+                                            <span className="login" onClick={() => {dispatch({type:SHOW_AUTH_MODAL,authModal:{show:true,toggle:true}})}}>登录</span>
+                                            <span className="register" onClick={() => {dispatch({type:SHOW_AUTH_MODAL,authModal:{show:true,toggle:false}})}}>注册</span>
                                         </li>
                                     </>
                             }
