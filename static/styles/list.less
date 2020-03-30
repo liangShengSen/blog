@@ -143,6 +143,68 @@
                                 color: #8a93a0;
                             }
                         }
+                        .share-panel{
+                            position: absolute;
+                            top: 100%;
+                            left: 50%;
+                            margin: 0 0 0 -5.5rem;
+                            width: 11rem;
+                            background-color: #fff;
+                            border: 1px solid #ebebeb;
+                            border-radius: 2px;
+                            z-index: 101;
+                            &:after, &:before {
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                left: 50%;
+                            }
+                            &:before {
+                                margin: -7px 0 0 -7px;
+                                border: 7px solid transparent;
+                                border-top: none;
+                                border-bottom: 7px solid #ebebeb;
+                            }
+                            &:after {
+                                margin: -6px 0 0 -6px;
+                                border: 6px solid transparent;
+                                border-top: none;
+                                border-bottom: 6px solid #fff;
+                            }
+                            .share-item {
+                                padding: .5rem .9rem;
+                                &:not(:last-child) {
+                                    border-bottom: 1px solid #ebebeb;
+                                }
+                                .share-title-box {
+                                    display: flex;
+                                    align-items: center;
+                                    font-size: 1.167rem;
+                                    color: #8a93a0;
+                                    .iconfont {
+                                        margin-right: .4rem;
+                                        width: 20px;
+                                    }
+                                    .icon-lianjie {
+                                        color: @link-active;
+                                    }
+                                    .icon-weibo {
+                                        color: chocolate;
+                                    }
+                                    .icon-weixin {
+                                        color: lime;
+                                    }
+                                }
+                                .qr-code {
+                                    margin: .6rem 0 .8rem;
+                                    height: 8.333rem;
+                                    background-position: 50%;
+                                    background-repeat: no-repeat;
+                                    background-size: contain;
+                                    background-image: url(data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22y…l%3A%23000000%3Bshape-rendering%3AcrispEdges%3B%22%2F%3E%0D%0A%3C%2Fsvg%3E);
+                                }
+                            }
+                        }
                     }
                 }
             }

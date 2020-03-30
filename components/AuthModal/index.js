@@ -14,16 +14,12 @@ const AuthModal = () => {
     const [phone,setPhone] = useState('')
     const [smsCode,setSmsCode] = useState('')
     const [regPassword,setRegPassword] = useState('')
-    const accountRef = useRef(null)
-    const usernameRef = useRef(null)
     const toggleLoginOrRegister = (status) => {
         setToggle(status)
         if(status) {
             setTitle('登陆')
-            // accountRef.current.focus()
         }else{
             setTitle('注册')
-            // usernameRef.current.focus()
         }
     }
     const getSmsCode = (event) => {
@@ -66,7 +62,7 @@ const AuthModal = () => {
                             toggle ? 
                             <>
                                 <div className="input-box">
-                                    <input ref={accountRef} value={account} onChange={(e)=>{setAccount(e.target.value)}} name="loginPhoneOrEmail" maxLength="64" placeholder="请输入手机号或邮箱" className="input" />
+                                    <input value={account} onChange={(e)=>{setAccount(e.target.value)}} name="loginPhoneOrEmail" maxLength="64" placeholder="请输入手机号或邮箱" className="input" />
                                 </div>
                                 <div className="input-box">
                                     <input value={password} onChange={(e)=>{setPassword(e.target.value)}} name="loginPassword" type="password" maxLength="64" placeholder="请输入密码" className="input" />
@@ -75,7 +71,7 @@ const AuthModal = () => {
                             :
                             <>
                                 <div className="input-box">
-                                    <input ref={usernameRef}  value={username} onChange={(e)=>{setUsername(e.target.value)}} name="registerUsername" maxLength="20" placeholder="请输入用户名" className="input" />
+                                    <input  value={username} onChange={(e)=>{setUsername(e.target.value)}} name="registerUsername" maxLength="20" placeholder="请输入用户名" className="input" />
                                 </div>
                                 <div className="input-box">
                                     <input value={phone} onChange={(e)=>{setPhone(e.target.value)}} name="registerPhoneNumber" maxLength="11" placeholder="请输入手机号" className="input" />

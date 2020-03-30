@@ -9,6 +9,7 @@ const Header = () => {
     const { login, visiable, dispatch } = useContext(StoreContext)
     const [focus, setFocus] = useState(false)
     const [show, setShow] = useState(false)
+    const [edit,setEdit] = useState(false)
     const toggleNavs = () => {
         show ? setShow(false) : setShow(true)
     }
@@ -16,7 +17,6 @@ const Header = () => {
     const toggleMenus = () => {
         showMenus ? setSshowMenus(false) : setSshowMenus(true)
     }
-
     const handleScroll = useCallback(() => {
         const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
         const action = {
@@ -118,9 +118,20 @@ const Header = () => {
                                     </>
                                     :
                                     <>
-                                        <li className="nav-item submit">
+                                        <li className="nav-item submit" onClick={() => {setEdit(!edit)}}>
                                             <img src="https://b-gold-cdn.xitu.io/v3/static/img/submit-icon.53f4253.svg" className="icon" />
                                             <span>写文章</span>
+                                            {
+                                                edit && <div className="submit-panel">
+                                                    <div className="title">来分享谷写文章，您将有机会</div>
+                                                    <ul className="benefit-list">
+                                                        <li className="item">与众多开发者分享您的经验和观点</li>
+                                                        <li className="item">被点赞分享，获得更多曝光和关注</li>
+                                                        <li className="item">文章审核通过后，获得客观的收入</li>
+                                                    </ul>
+                                                    <button onClick={() => {dispatch({type:SHOW_AUTH_MODAL,authModal:{show:true,toggle:false}})}}>开始写文章</button>
+                                                </div>
+                                            }
                                         </li>
                                         <li className="nav-item auth">
                                             <span className="login" onClick={() => {dispatch({type:SHOW_AUTH_MODAL,authModal:{show:true,toggle:true}})}}>登录</span>
