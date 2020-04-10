@@ -10,12 +10,17 @@ const Header = () => {
     const [focus, setFocus] = useState(false)
     const [show, setShow] = useState(false)
     const [edit,setEdit] = useState(false)
-    const toggleNavs = () => {
-        show ? setShow(false) : setShow(true)
+    const [showMenus, setShowMenus] = useState(false)
+    const toggleEdit = (event) => {
+        if(event.target.className.split(' ').some((r) => r == 'setedit')) {
+            setEdit(!edit)
+        }
     }
-    const [showMenus, setSshowMenus] = useState(false)
+    const toggleNavs = () => {
+        setShow(!show)
+    }
     const toggleMenus = () => {
-        showMenus ? setSshowMenus(false) : setSshowMenus(true)
+        setShowMenus(!showMenus)
     }
     const handleScroll = useCallback(() => {
         const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
@@ -27,6 +32,13 @@ const Header = () => {
     })
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
+        document.addEventListener('click',(event) => {
+            if(event.target.className.split(' ').some((r) => r == 'setedit')) {
+                setEdit(!edit)
+            }else{
+                setEdit(false)
+            }
+        })
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
     return (
@@ -118,16 +130,16 @@ const Header = () => {
                                     </>
                                     :
                                     <>
-                                        <li className="nav-item submit" onClick={() => {setEdit(!edit)}}>
-                                            <img src="https://b-gold-cdn.xitu.io/v3/static/img/submit-icon.53f4253.svg" className="icon" />
-                                            <span>写文章</span>
+                                        <li className="nav-item submit setedit" onClick={toggleEdit}>
+                                            <img src="https://b-gold-cdn.xitu.io/v3/static/img/submit-icon.53f4253.svg" className="icon setedit" />
+                                            <span className="setedit">写文章</span>
                                             {
                                                 edit && <div className="submit-panel">
                                                     <div className="title">来分享谷写文章，您将有机会</div>
                                                     <ul className="benefit-list">
                                                         <li className="item">与众多开发者分享您的经验和观点</li>
                                                         <li className="item">被点赞分享，获得更多曝光和关注</li>
-                                                        <li className="item">文章审核通过后，获得客观的收入</li>
+                                                        <li className="item">文章审核通过后，获得可观的收入</li>
                                                     </ul>
                                                     <button onClick={() => {dispatch({type:SHOW_AUTH_MODAL,authModal:{show:true,toggle:false}})}}>开始写文章</button>
                                                 </div>

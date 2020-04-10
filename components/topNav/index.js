@@ -3,7 +3,7 @@ import ActiveLink from '../ActiveLink'
 
 const topNav = props => (
     <nav role="navigation" className="view-nav navigator">
-        <ul className="nav-list left">
+        <ul className="nav-list">
             <li className="nav-item router-link-exact-active route-active active">
                 <ActiveLink href='/2' className="nav-item">推荐</ActiveLink>
             </li>

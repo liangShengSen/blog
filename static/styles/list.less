@@ -118,6 +118,14 @@
                         height: 100%;
                         cursor: pointer;
                         user-select: none;
+                        @media (max-width: 600px) {
+                            &.action {
+                                flex: 1 1 50%;
+                            }
+                            &.share-action {
+                                display: none;
+                            }
+                        }
                         &:not(:last-child):after {
                             content: "";
                             position: absolute;
