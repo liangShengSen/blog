@@ -44,7 +44,7 @@ const AuthModal = () => {
         setOauth(false)
     },[authModal.toggle])
     return (
-        authModal.show && <div className="auth-modal-box">
+        authModal.show && <div className="auth-modal-box" onClick={() => {dispatch({type:SHOW_AUTH_MODAL,authModal:{show:false,toggle:null}})}}>
             <form className="auth-form">
                 {
                     toggle && 

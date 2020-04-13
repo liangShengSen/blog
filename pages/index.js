@@ -23,10 +23,10 @@ const Index = props => {
 
 Index.getInitialProps = async ({req,res,err}) => {
   return {}
-  const resp = await axios.get('https://api.tvmaze.com/search/shows?q=batman')
-  return {
-    shows: resp.data.map(entry => entry.show)
-  }
+  // const resp = await axios.get('https://api.tvmaze.com/search/shows?q=batman')
+  // return {
+  //   shows: resp.data.map(entry => entry.show)
+  // }
 }
 
 export default Index
