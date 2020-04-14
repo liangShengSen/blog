@@ -4,7 +4,7 @@ import axios from 'axios'
 
 const Index = props => {
   return (
-    <Layout>
+    <Layout showLeftNav={true}>
       <div className="stream">
         <div className="stream-wrapper">
           <div className="page-header">

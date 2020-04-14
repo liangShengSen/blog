@@ -14,8 +14,8 @@ const Layout = props => {
                 <div className="container main-container">
                     <TopNav />
                     <div className="main">
-                        <LeftNav />
-                        {props.children}
+                        { props.showLeftNav && <LeftNav /> }
+                        { props.children }
                         <Recommend />
                     </div>
                 </div>

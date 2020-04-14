@@ -1,12 +1,15 @@
 import '../../static/styles/list.less'
-import ActiveLink from '../ActiveLink'
+import Router from 'next/router'
 import React, { useState } from 'react'
 
 const List = props => {
     const [share, setShare] = useState(false)
+    const jumpDetailPage = (id) => {
+        Router.push(`/detail/${id}/`)
+    }
     return (
         <ul className="pin-list">
-            <li className="item shadow">
+            <li className="item shadow" onClick={() => { jumpDetailPage(2) }}>
                 <div className="pin">
                     <div className="pin-header-row">
                         <div className="account-group">

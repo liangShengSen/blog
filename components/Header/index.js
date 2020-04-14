@@ -57,7 +57,7 @@ const Header = () => {
                                         <ActiveLink href='/' className="nav-item">首页</ActiveLink>
                                     </li>
                                     <li className="nav-item">
-                                        <ActiveLink href='/post' className="nav-item">沸点</ActiveLink>
+                                        <ActiveLink href='/detail' className="nav-item">沸点</ActiveLink>
                                     </li>
                                     <li className="nav-item">
                                         <ActiveLink href='/1' className="nav-item">话题</ActiveLink>
