@@ -5,7 +5,7 @@
         .pin {
             background-color: #fff;
             border-radius: .2rem;
-            .pin-content-row, .pin-image-row {
+            .pin-content-row {
                 position: relative;
                 margin: 1rem 4rem 0 6.45rem;
                 cursor: pointer;
@@ -57,19 +57,6 @@
                         }
                     }
                 }
-                .header-action {
-                    display: flex;
-                    .follow-button {
-                        margin: 0 0 0 auto;
-                        padding: 0;
-                        width: 55px;
-                        height: 26px;
-                        font-size: 13px;
-                        color: @color-green;
-                        border: 1px solid @color-green;
-                        background-color: #fff;
-                    }
-                }
             }
             .pin-content-row {
                 margin-top: 5px;
@@ -80,27 +67,6 @@
                     white-space: pre-wrap;
                     color: #17181a;
                     overflow: hidden;
-                }
-            }
-            .pin-image-row {
-                margin-top: .333rem;
-                .image-box {
-                    display: flex;
-                    flex-wrap: wrap;
-                    max-width: 100%;
-                    .image {
-                        flex: 0 1 auto;
-                        position: relative;
-                        margin-top: 4px;
-                        max-width: 100%;
-                        background-position: 50%;
-                        background-repeat: no-repeat;
-                        background-size: cover;
-                        cursor: zoom-in;
-                        .ratio-holder {
-                            pointer-events: none;
-                        }
-                    }
                 }
             }
             .pin-action-row {

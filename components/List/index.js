@@ -9,7 +9,7 @@ const List = props => {
     }
     return (
         <ul className="pin-list">
-            <li className="item shadow" onClick={() => { jumpDetailPage(2) }}>
+            <li className="item shadow">
                 <div className="pin">
                     <div className="pin-header-row">
                         <div className="account-group">
@@ -31,23 +31,10 @@ const List = props => {
                                 </div>
                             </div>
                         </div>
-                        <div className="header-action">
-                            <button className="subscribe-btn follow-button">关注</button>
-                        </div>
                     </div>
-                    <div className="pin-content-row">
+                    <div className="pin-content-row" onClick={() => { jumpDetailPage(2) }}>
                         <div className="content-box content-box">
-                            <span>时间是个好东西，见证了人心，验证了人性，懂得了真的，明白了假的，生活告诉我没有过不去的经历，只有走不出的自己。</span>
-                            <div className="limit-ctl-box"></div>
-                        </div>
-                    </div>
-                    <div className="pin-image-row">
-                        <div className="image-box-wrapper image-box">
-                            <div className="image-box col-1">
-                                <div className="image">
-                                    <div className="ratio-holder"></div>
-                                </div>
-                            </div>
+                            时间是个好东西，见证了人心，验证了人性，懂得了真的，明白了假的，生活告诉我没有过不去的经历，只有走不出的自己。
                         </div>
                     </div>
                     <div className="pin-action-row">
