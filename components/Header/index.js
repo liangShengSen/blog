@@ -80,16 +80,7 @@ const Header = () => {
                                 login ?
                                     <>
                                         <li className="nav-item add">
-                                            <div className="add-group">
-                                                <button className="add-btn">发沸点</button>
-                                                <div className="more">
-                                                    <i className="iconfont icon-f11"></i>
-                                                </div>
-                                                <ul className="more-list">
-                                                    <li className="item">写文章</li>
-                                                    <li className="item">分享链接</li>
-                                                </ul>
-                                            </div>
+                                            <ActiveLink href='/editor/markdownRules'>写文章</ActiveLink>
                                         </li>
                                         <li className="nav-item notification">
                                             <Link href="/">

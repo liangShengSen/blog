@@ -1,0 +1,124 @@
+body {
+    overflow: hidden !important;
+}
+.markdown-editor-introduce {
+    width: 100%;
+    color: #333;
+    .editor-header {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 0 1.4rem;
+        height: 5.334rem;
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        z-index: 100;
+        .title {
+            margin: 0;
+            padding: 0;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #000;
+            flex: 1 1 auto;
+        }
+        .start-btn {
+            padding: .6rem 1em;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: @link-active;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+    }
+    .main-content {
+        width: 100%;
+        position: absolute;
+        top: 5.334rem;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: auto;
+        background-color: #fff;
+        .main {
+            width: 850px;
+            margin: 0 auto;
+            overflow: hidden;
+            .content-html {
+                padding: 0.5em 2em 5em;
+                font-size: 1.334rem;
+                line-height: 1.7;
+                word-break: break-word;
+                .heading {
+                    margin: 1.5rem 0;
+                }
+                p {
+                    line-height: 1.7em;
+                }
+                code {
+                    font-family: Menlo,Monaco,Consolas,Courier New,monospace;
+                    font-size: .8em;
+                    padding: .2em .4em;
+                    word-break: break-word;
+                    color: #4e5980;
+                    background-color: #f8f8f8;
+                    border-radius: 2px;
+                }
+                ol, ul {
+                    padding-left: 2em;
+                    li {
+                        margin-bottom: .5em;
+                    }
+                }
+                blockquote {
+                    margin: 1em 0;
+                    border-left: 4px solid #ddd;
+                    padding: 0 1em;
+                    color: @color-666;
+                }
+                .md-link {
+                    color: @link-active;
+                    text-decoration: underline;
+                }
+                pre {
+                    font-family: Menlo,Monaco,Consolas,Courier New,monospace;
+                    line-height: 1.45em;
+                    & > code {
+                        font-size: .8em;
+                        padding: .5em 1em;
+                        margin: 0;
+                        word-break: normal;
+                        display: block;
+                        overflow-x: auto;
+                        -webkit-overflow-scrolling: touch;
+                        color: #333;
+                        background: #f8f8f8;
+                        .hljs-keyword, .hljs-selector-tag, .hljs-subst {
+                            color: #333;
+                            font-weight: 700;
+                        }
+                    }
+                }
+                thead {
+                    background: #f6f6f6;
+                    color: #000;
+                    text-align: left;
+                }
+                th,td {
+                    padding: .8em .5em;
+                    line-height: 1.5em;
+                }
+                td {
+                    min-width: 7.5em;
+                }
+                tr:nth-child(2n) {
+                    background-color: #fcfcfc;
+                }
+            }
+        }
+    }
+}

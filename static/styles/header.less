@@ -269,59 +269,16 @@
                 }
                 .add {
                     cursor: default;
-                    .add-group {
-                        display: flex;
-                        align-items: center;
-                        position: relative;
-                        height: 2.667rem;
-                        cursor: pointer;
-                        .add-btn,.more {
-                            height: 100%;
-                            color: #fff;
-                            background-color: @link-active;
-                            border-radius: 3px;
-                        }
-                        .add-btn {
-                            padding: 0 .9rem;
-                            font-size: 1.167rem;
-                            border-top-right-radius: 0;
-                            border-bottom-right-radius: 0;
-                        }
-                        .more {
-                            flex: 0 0 auto;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            width: 1.25rem;
-                            border-left: 1px solid hsla(0,0%,100%,.1);
-                            border-top-left-radius: 0;
-                            border-bottom-left-radius: 0;
-                            .iconfont {
-                                margin-top: .2rem;
-                                font-size: 1.1rem;
-                            }
-                        }
-                        .more-list {
-                            position: absolute;
-                            top: 100%;
-                            left: 0;
-                            right: 0;
-                            padding: .417rem 0;
-                            font-size: 1.167rem;
-                            color: #3b76c5;
-                            background-color: #fff;
-                            border: 1px solid #ebebeb;
-                            border-radius: 2px;
-                            box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
-                            display: none;
-                            z-index: 1;
-                            .item {
-                                padding: 0 0 0 .8rem;
-                                line-height: 1.9;
-                                &:hover {
-                                    background-color: #f9f9f9;
-                                }
-                            }
+                    & > a {
+                        padding: .43rem 2rem;
+                        font-size: 1.2rem;
+                        color: #fff !important;
+                        background-color: #007fff;
+                        border-radius: 4px;
+                        border: none;
+                        outline: none;
+                        &::before {
+                            position: relative;
                         }
                     }
                 }

@@ -22,7 +22,7 @@ export const StoreContext = createContext({})
 
 export const Store = props => {
     const defalutStatesValue = {
-        login:false,
+        login:true,
         visiable:true,
         authModal:{
             show:false,
