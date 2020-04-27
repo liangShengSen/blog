@@ -1,6 +1,3 @@
-body {
-    overflow: hidden !important;
-}
 .markdown-editor-introduce {
     width: 100%;
     color: #333;
@@ -16,6 +13,9 @@ body {
         background-color: #fff;
         border-bottom: 1px solid #ddd;
         z-index: 100;
+        .left-box {
+            margin-right: 50px;
+        }
         .title {
             margin: 0;
             padding: 0;
@@ -42,7 +42,7 @@ body {
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto;
+        height: max-content;
         background-color: #fff;
         .main {
             width: 850px;

@@ -5,6 +5,13 @@ const MdRules = () => {
     return (
         <div className="markdown-editor-introduce">
             <header className="editor-header">
+                <div className="left-box">
+                    <Link href="/">
+                        <a>
+                            <img src="../../static/images/logo.a7995ad.svg" alt="掘金"/>
+                        </a>
+                    </Link>
+                </div>
                 <div className="title">
                     掘金－Markdown 编辑器使用手册
                 </div>
@@ -76,7 +83,7 @@ const MdRules = () => {
                         </ul>
                         <h4 className="heading">链接和图片</h4>
                         <p>在 Markdown 中插入链接不需要其他按钮，你只需要使用<code>［显示文本］(链接地址)</code>这样的格式语法即可。例如：
-    <a className="md-link" href="javascript:;">稀土掘金</a>
+                        <span className="md-link">稀土掘金</span>
     插入图片的语法与插入链接的语法很像，只是前面多了一个 <code>!</code>.语法如下：
     <code>![图片的标注](图片链接地址)</code></p>
                         <h4 className="heading">引用</h4>
@@ -139,7 +146,9 @@ const MdRules = () => {
                             </tbody>
                         </table>
                         <h4 className="heading">结语</h4>
-                        <p>以上是最常见的 Markdown 的语法和格式，如果你还希望深入的学习 Markdown，可以参考这里<a target="_blank" href="https://www.appinn.com/markdown/" className="md-link">Markdown语法</a>，非常感谢使用** 掘金－Markdown 编辑器**,希望为您提供舒适的写作体验。</p>
+                        <p>以上是最常见的 Markdown 的语法和格式，如果你还希望深入的学习 Markdown，可以参考这里
+                                <a href="https://www.appinn.com/markdown/" className="md-link" target="_blank">Markdown语法</a>
+                            ，非常感谢使用** 掘金－Markdown 编辑器**,希望为您提供舒适的写作体验。</p>
                     </div>
                 </div>
             </div>
