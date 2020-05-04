@@ -6,6 +6,7 @@ import React, { useState, useEffect, useCallback, useContext } from 'react'
 import { StoreContext } from '../../redux'
 import { UPDATE_VISIABLE, SHOW_AUTH_MODAL } from '../../redux/action_type'
 
+
 const Header = () => {
     const { login, visiable, dispatch } = useContext(StoreContext)
     const [focus, setFocus] = useState(false)
